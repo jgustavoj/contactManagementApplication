@@ -1,0 +1,6 @@
+1. Test API end points 
+2. be able to capture the values in the contact list
+3. build the fetch in flux.js under actions - post, get, delete 
+4. add contact method 
+5. delete contact method 
+6. put method for monday 
