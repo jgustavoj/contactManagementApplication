@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import MikePhoto from "../../img/m101.jpg";
 import { Context } from "../store/appContext";
 
 export const ContactCard = props => {
-	const [state, setState] = useState({
-		//initialize state here
-	});
+	const [state, setState] = useState({});
 
 	const { store, actions } = useContext(Context);
 	var currentContact = store.contacts.filter(contact => contact.id == props.id);
@@ -20,9 +18,17 @@ export const ContactCard = props => {
 				</div>
 				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 					<div className=" float-right">
-						<button className="btn">
-							<i className="fas fa-pencil-alt mr-3" />
-						</button>
+						<Link
+							to={{
+								pathname: "/edit/:id",
+								aboutProps: {
+									contact: currentContact[0]
+								}
+							}}>
+							<button className="btn">
+								<i className="fas fa-pencil-alt mr-3" />
+							</button>
+						</Link>
 						<button className="btn" onClick={() => actions.deleteContact(props.id)}>
 							<i className="fas fa-trash-alt" />
 						</button>
@@ -53,20 +59,22 @@ export const ContactCard = props => {
 	);
 };
 
-/**
- * Define the data-types for
- * your component's properties
- **/
 ContactCard.propTypes = {
 	history: PropTypes.object,
+	/**
+	 * Define the data-types for
+	 * your component's properties
+	 **/
+
 	onDelete: PropTypes.func,
 	id: PropTypes.string
 };
 
-/**
- * Define the default values for
- * your component's properties
- **/
 ContactCard.defaultProps = {
 	onDelete: null
+
+	/**
+	 * Define the default values for
+	 * your component's properties
+	 **/
 };
