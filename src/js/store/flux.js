@@ -43,6 +43,20 @@ const getState = ({ getStore, setStore }) => {
 							.then(data => setStore({ contacts: data }));
 						console.log("created");
 					});
+			},
+
+			deleteContact: id => {
+				fetch(`https://assets.breatheco.de/apis/fake/contact/${id}`, {
+					method: "DELETE",
+					headers: { "Content-Type": "application/json" }
+				})
+					.then(response => response.json())
+					.then(() => {
+						fetch("https://assets.breatheco.de/apis/fake/contact/agenda/Gus-Jimenez")
+							.then(response => response.json())
+							.then(data => setStore({ contacts: data }));
+						console.log("deleted");
+					});
 			}
 		}
 	};
