@@ -57,6 +57,27 @@ const getState = ({ getStore, setStore }) => {
 							.then(data => setStore({ contacts: data }));
 						console.log("deleted");
 					});
+			},
+
+			editContact: (name, email, phone, address, id) => {
+				fetch("https://assets.breatheco.de/apis/fake/contact/" + id, {
+					method: "PUT",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						agenda_slug: "Gus-Jimenez",
+						full_name: name,
+						email: email,
+						phone: phone,
+						address: address
+					})
+				})
+					.then(response => response.json())
+					.then(() => {
+						fetch("https://assets.breatheco.de/apis/fake/contact/agenda/Gus-Jimenez")
+							.then(response => response.json())
+							.then(data => setStore({ contacts: data }));
+						console.log("Edited");
+					});
 			}
 		}
 	};

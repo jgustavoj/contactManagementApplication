@@ -1,13 +1,15 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import PropTypes from "prop-types";
 
-export const EditContact = () => {
+export const EditContact = props => {
 	const [contact, setContact] = useState({
-		name: "",
-		email: "",
-		phone: "",
-		address: ""
+		name: props.location.aboutProps.contact.full_name,
+		email: props.location.aboutProps.contact.email,
+		phone: props.location.aboutProps.contact.phone,
+		address: props.location.aboutProps.contact.address,
+		id: props.location.aboutProps.contact.id
 	});
 
 	const { store, actions } = useContext(Context);
@@ -61,7 +63,15 @@ export const EditContact = () => {
 					</div>
 					<Link to="/">
 						<button
-							onClick={actions.addContact(contact.name, contact.email, contact.phone, contact.address)}
+							onClick={() =>
+								actions.editContact(
+									contact.name,
+									contact.email,
+									contact.phone,
+									contact.address,
+									contact.id
+								)
+							}
 							type="button"
 							className="btn btn-primary form-control">
 							{" "}
@@ -75,4 +85,8 @@ export const EditContact = () => {
 			</div>
 		</div>
 	);
+};
+
+EditContact.propTypes = {
+	location: PropTypes.object
 };

@@ -55,7 +55,9 @@ export const AddContact = () => {
 					</div>
 					<Link to="/">
 						<button
-							onClick={actions.addContact(contact.name, contact.email, contact.phone, contact.address)}
+							onClick={() =>
+								actions.addContact(contact.name, contact.email, contact.phone, contact.address)
+							}
 							type="button"
 							className="btn btn-primary form-control">
 							{" "}
