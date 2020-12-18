@@ -68,7 +68,8 @@ const getState = ({ getStore, setStore }) => {
 						full_name: name,
 						email: email,
 						phone: phone,
-						address: address
+						address: address,
+						id: id
 					})
 				})
 					.then(response => response.json())
