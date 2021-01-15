@@ -61,7 +61,7 @@ export const EditContact = props => {
 							value={contact.address}
 						/>
 					</div>
-					<Link to="/">
+					<Link to="/" className="d-flex justify-content-center">
 						<button
 							onClick={() =>
 								actions.editContact(
@@ -73,7 +73,7 @@ export const EditContact = props => {
 								)
 							}
 							type="button"
-							className="btn btn-primary form-control">
+							className="customButtonSave">
 							{" "}
 							save
 						</button>

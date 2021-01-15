@@ -17,7 +17,6 @@
 //     align-items: center;
 //     justify-content: center;
 //     font-size: 3rem;
-
 // }
 .btn{
     color: #1a86ff;
@@ -27,18 +26,30 @@
 .customButton{
     background-color: #1a86ff;
     color: white;
-    padding: 10px;
-    border-radius: 5px;
-    border: 0px;
-    letter-spacing: 0.65px;
-    box-shadow: 5px 5px 10px grey;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+    border: 0;
+    letter-spacing: 0.040625rem;
+    box-shadow:  0.3125rem  0.3125rem 0.625rem grey;
 
 }
 
+.customButtonSave{
+    background-color: #1a86ff;
+    color: white;
+    padding: 0.625rem 6.25rem 0.625rem 6.25rem;
+    font-size: 1.25rem;
+    border-radius: 0.3125rem;
+    border: 0;
+    letter-spacing: 0.078125rem;
+    box-shadow:  0.3125rem  0.3125rem 0.625rem grey;
+
+}
 
 // .fas, .far{
 //     color: black;
 // }
+
 .navbar{
     background-color: #060b26;
     height: 80px;

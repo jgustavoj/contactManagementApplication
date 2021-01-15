@@ -64,19 +64,20 @@ export const AddContact = () => {
 							placeholder="Enter address"
 						/>
 					</div>
-					<Link to="/">
+					<Link to="/" className="d-flex justify-content-center">
 						<button
 							disabled={!contact.name || !contact.address || !contact.phone || !contact.email}
 							onClick={handleSave}
 							type="button"
-							className="btn btn-primary form-control">
-							{" "}
+							className="customButtonSave">
 							save
 						</button>
 					</Link>
-					<Link className="mt-3 w-100 text-center" to="/">
-						or get back to contacts
-					</Link>
+					<div className="mt-3">
+						<Link className="mt-3 w-100 text-center" to="/">
+							or get back to contacts
+						</Link>
+					</div>
 				</form>
 			</div>
 		</div>
