@@ -24,14 +24,18 @@ export const Contacts = () => {
 								<ContactCard
 									key={item.id}
 									id={item.id}
-									onDelete={() => setState({ showModal: true })}
+									// name={item.full_name}
+									// email={item.email}
+									// phone={item.phone}
+									// address={item.address}
+									onDelete={() => setState({ showModal: true, id: item.id })}
 								/>
 							);
 						})}
 					</ul>
 				</div>
 			</div>
-			<Modal show={state.showModal} onClose={() => setState({ showModal: true })} />
+			<Modal show={state.showModal} id={state.id} onClose={() => setState({ showModal: false })} />
 		</div>
 	);
 };

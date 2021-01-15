@@ -8,7 +8,7 @@ export const ContactCard = props => {
 	const [state, setState] = useState({});
 
 	const { store, actions } = useContext(Context);
-	var currentContact = store.contacts.filter(contact => contact.id == props.id);
+	let currentContact = store.contacts.filter(contact => contact.id == props.id);
 
 	return (
 		<li key={props.id} className="list-group-item">
@@ -29,7 +29,8 @@ export const ContactCard = props => {
 								<i className="fas fa-pencil-alt mr-3" />
 							</button>
 						</Link>
-						<button className="btn" onClick={() => actions.deleteContact(props.id)}>
+
+						<button className="btn" onClick={() => props.onDelete()}>
 							<i className="fas fa-trash-alt" />
 						</button>
 					</div>
@@ -62,7 +63,12 @@ export const ContactCard = props => {
 ContactCard.propTypes = {
 	history: PropTypes.object,
 	onDelete: PropTypes.func,
-	id: PropTypes.string
+	id: PropTypes.string,
+	name: PropTypes.string,
+	address: PropTypes.string,
+	phone: PropTypes.number,
+	email: PropTypes.string,
+	onDelete: PropTypes.func
 };
 
 ContactCard.defaultProps = {
