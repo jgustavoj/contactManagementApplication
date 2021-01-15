@@ -64,10 +64,6 @@ ContactCard.propTypes = {
 	history: PropTypes.object,
 	onDelete: PropTypes.func,
 	id: PropTypes.string,
-	name: PropTypes.string,
-	address: PropTypes.string,
-	phone: PropTypes.number,
-	email: PropTypes.string,
 	onDelete: PropTypes.func
 };
 

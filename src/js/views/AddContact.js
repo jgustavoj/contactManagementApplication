@@ -3,14 +3,21 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const AddContact = () => {
+	const { store, actions } = useContext(Context);
 	const [contact, setContact] = useState({
-		name: "",
-		email: "",
-		phone: "",
-		address: ""
+		name: null,
+		email: null,
+		phone: null,
+		address: null
 	});
 
-	const { store, actions } = useContext(Context);
+	const handleChange = e => {
+		setContact({ ...contact, [e.target.name]: e.target.value });
+	};
+
+	const handleSave = () => {
+		actions.addContact(contact.name, contact.email, contact.phone, contact.address);
+	};
 
 	return (
 		<div className="container">
@@ -20,7 +27,8 @@ export const AddContact = () => {
 					<div className="form-group">
 						<label>Full Name</label>
 						<input
-							onChange={e => setContact({ ...contact, name: e.target.value })}
+							onChange={handleChange}
+							name="name"
 							type="text"
 							className="form-control"
 							placeholder="Full Name"
@@ -29,8 +37,9 @@ export const AddContact = () => {
 					<div className="form-group">
 						<label>Email</label>
 						<input
-							onChange={e => setContact({ ...contact, email: e.target.value })}
+							onChange={handleChange}
 							type="email"
+							name="email"
 							className="form-control"
 							placeholder="Enter email"
 						/>
@@ -38,8 +47,9 @@ export const AddContact = () => {
 					<div className="form-group">
 						<label>Phone</label>
 						<input
-							onChange={e => setContact({ ...contact, phone: e.target.value })}
+							onChange={handleChange}
 							type="phone"
+							name="phone"
 							className="form-control"
 							placeholder="Enter phone"
 						/>
@@ -47,17 +57,17 @@ export const AddContact = () => {
 					<div className="form-group">
 						<label>Address</label>
 						<input
-							onChange={e => setContact({ ...contact, address: e.target.value })}
+							onChange={handleChange}
 							type="text"
+							name="address"
 							className="form-control"
 							placeholder="Enter address"
 						/>
 					</div>
 					<Link to="/">
 						<button
-							onClick={() =>
-								actions.addContact(contact.name, contact.email, contact.phone, contact.address)
-							}
+							disabled={!contact.name || !contact.address || !contact.phone || !contact.email}
+							onClick={handleSave}
 							type="button"
 							className="btn btn-primary form-control">
 							{" "}

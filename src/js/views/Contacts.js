@@ -24,10 +24,6 @@ export const Contacts = () => {
 								<ContactCard
 									key={item.id}
 									id={item.id}
-									// name={item.full_name}
-									// email={item.email}
-									// phone={item.phone}
-									// address={item.address}
 									onDelete={() => setState({ showModal: true, id: item.id })}
 								/>
 							);
