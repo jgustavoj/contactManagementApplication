@@ -1,3 +1,118 @@
 /* 
     General Styles
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+// .home, .crm, .add {
+//     display: flex;
+//     height: 90vh;
+//     align-items: center;
+//     justify-content: center;
+//     font-size: 3rem;
+
+// }
+.btn{
+    color: #1a86ff;
+
+}
+
+.customButton{
+    background-color: #1a86ff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0px;
+    letter-spacing: 0.65px;
+    box-shadow: 5px 5px 10px grey;
+
+}
+
+
+// .fas, .far{
+//     color: black;
+// }
+.navbar{
+    background-color: #060b26;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.menu-bars{
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+
+}
+
+.nav-menu{
+    background-color: #060b26;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+
+}
+
+.nav-menu.active{
+    left: 0;
+    transition: 350ms;
+
+}
+
+.nav-text{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+}
+
+.nav-text a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+}
+
+.nav-text a:hover{
+    background-color: #1a86ff;
+}
+
+.nav-menu-items{
+    width: 100%;
+}
+
+.navbar-toggle{
+    background-color: #060b26;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+}
+
+span{
+    margin-left: 16px;
+}
+

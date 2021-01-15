@@ -10,28 +10,30 @@ export const Contacts = () => {
 	});
 	const { store, actions } = useContext(Context);
 	return (
-		<div className="container">
-			<div>
-				<p className="text-right my-3">
-					<Link className="btn btn-success" to="/add">
-						Add new contact
-					</Link>
-				</p>
-				<div id="contacts" className="panel-collapse collapse show" aria-expanded="true">
-					<ul className="list-group pull-down" id="contact-list">
-						{store.contacts.map(item => {
-							return (
-								<ContactCard
-									key={item.id}
-									id={item.id}
-									onDelete={() => setState({ showModal: true, id: item.id })}
-								/>
-							);
-						})}
-					</ul>
+		<>
+			<div className="container">
+				<div>
+					<p className="text-right my-3">
+						<Link to="/add">
+							<button className="customButton">Add new contact</button>
+						</Link>
+					</p>
+					<div id="contacts" className="panel-collapse collapse show" ar-expanded="true">
+						<ul className="list-group pull-down" id="contact-ialist">
+							{store.contacts.map(item => {
+								return (
+									<ContactCard
+										key={item.id}
+										id={item.id}
+										onDelete={() => setState({ showModal: true, id: item.id })}
+									/>
+								);
+							})}
+						</ul>
+					</div>
 				</div>
+				<Modal show={state.showModal} id={state.id} onClose={() => setState({ showModal: false })} />
 			</div>
-			<Modal show={state.showModal} id={state.id} onClose={() => setState({ showModal: false })} />
-		</div>
+		</>
 	);
 };
