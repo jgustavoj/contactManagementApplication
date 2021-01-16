@@ -18,8 +18,10 @@ export const Contacts = () => {
 							<button className="customButton">Add new contact</button>
 						</Link>
 					</p>
-					<div id="contacts" className="panel-collapse collapse show" ar-expanded="true">
-						<ul className="list-group pull-down" id="contact-ialist">
+					{/* <div id="contacts" className="panel-collapse collapse show" ar-expanded="true"> */}
+					{/* <div id="contacts"> */}
+					<ul className="list-group">
+						<li className="list-group-item">
 							{store.contacts.map(item => {
 								return (
 									<ContactCard
@@ -29,8 +31,10 @@ export const Contacts = () => {
 									/>
 								);
 							})}
-						</ul>
-					</div>
+						</li>
+					</ul>
+					{/* </div> */}
+					{/* </div> */}
 				</div>
 				<Modal show={state.showModal} id={state.id} onClose={() => setState({ showModal: false })} />
 			</div>
