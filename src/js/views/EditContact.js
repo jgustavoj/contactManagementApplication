@@ -19,7 +19,9 @@ export const EditContact = props => {
 	return (
 		<div className="container">
 			<div>
-				<h1 className="text-center mt-5">Edit contact</h1>
+				<h1 className="text-center mt-5" style={{ fontSize: "5vmin" }}>
+					Edit contact
+				</h1>
 				<form>
 					<div className="form-group">
 						<label>Full Name</label>

@@ -13,8 +13,8 @@ export const Navbar = () => {
 			className: "nav-text"
 		},
 		{
-			title: "CRM",
-			path: "/crm",
+			title: "Email",
+			path: "/email",
 			icon: <i className="far fa-address-card fa-lg"></i>,
 			className: "nav-text"
 		},
@@ -32,6 +32,8 @@ export const Navbar = () => {
 				<Link to="#" className="menus-bars">
 					<i className="fas fa-bars fa-2x" onClick={showSidebar}></i>
 				</Link>
+				<div className="headingTab">Contact Management</div>
+				<span></span>
 			</div>
 			<nav className={sidebar ? "nav-menu active" : "nav-menu"}>
 				<ul className="nav-menu-items" onClick={showSidebar}>

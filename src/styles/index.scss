@@ -18,6 +18,9 @@
 //     justify-content: center;
 //     font-size: 3rem;
 // }
+
+
+
 .btn{
     color: #1a86ff;
 
@@ -45,16 +48,16 @@
     box-shadow:  0.3125rem  0.3125rem 0.625rem grey;
 
 }
-
-// .fas, .far{
-//     color: black;
-// }
+.headingTab{
+    color: white;
+    font-size: 3.5vmin;
+}
 
 .navbar{
     background-color: #060b26;
     height: 80px;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
 }
 

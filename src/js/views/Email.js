@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Crm = () => {
+export const Email = () => {
 	return (
 		<>
-			<h1>CRM</h1>
+			<h1>Email</h1>
 		</>
 	);
 };
