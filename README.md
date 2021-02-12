@@ -1,60 +1,53 @@
-# ![alt text](https://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=breathecode,32) Contact Managment Application 
+# The Schedule Guy
 
-Technologies: HTML, CSS, JS, React, React Router and Context.
+<p align="center">
+<img src="https://github.com/jgustavoj/portfolio-v1/blob/master/images/project-2/contact-management.png" />
+</p>
+<p> This is a full-Stack Interactive Application that allows you to utilize CRUD for all contacts in the database. It uses context as a global state to efficiently share component values throughout the application.</p>
 
-Hello! It is time to start doing professional front-end applications. This time
-we will be creating a small contact management application that allows users to:
-Read, Create, Update and Delete contacts. [Check it out here!](https://github.com/breatheco-de/exercise-contact-list/blob/master/preview.gif?raw=true)
 
-***Please use the Context for this project:*** The boilerplate comes with the Context configured. Check the ```/store``` folder.
+ **Live Source Coming Soon** :raised_hands:
 
-### How to start?
+## Technologies
 
-Clone the repository with the boilerplate, it contains no real functionalities 
-but it has 99.99% of the HTML/CSS that you'll need for the project, 
-allowing you to focus on the functionality.
+  * React
+  * Python
+  * Flask
+  * SQLAlchemy
+  * Context
+  * Scss
 
-***Note: You'll need to code all functionalities.***
+<img src="https://github.com/jgustavoj/portfolio-v1/blob/master/images/project-2/contact-management-2.png" />
 
-### The project is divided in: 
 
-#### Two different views: 
+## Backend Repository
 
-1. Contact: Contains the list of contacts.
-2. AddContact: It's just a form used to create or update contacts.
+[Contact Management Application Backend](https://github.com/jgustavoj/react-contact-management-application-backend-project)
 
-#### One component:
-ContactCard: displays just one contact.
+## Coming Soon
 
-## TO-DO functionalities
+<p>Email functionality with gmail API :email: </p>
 
-- You have to add the code needed to make your application handle contacts, specifically: 
-    - create, 
-    - update, 
-    - and delete.
-- (Optional) Ask the user for confirmation before deleting, use the Modal component for that.
 
-All the functionalities must be implemented in the ```actions``` object (store.js).
+## Requirements to install project:
 
-Hint: start with some dummy content in the store (store.js).
+- Make sure you are using node version 10
 
-```Fetch``` the data from the API: https://assets.breatheco.de/apis/fake/contact/
-
-Hint: Use Postman to try the API endpoints before coding.  
-
-## Steps to install this project
-
-##### 1. Clone the repository
+1. Clone Repo:
 ```
-$ git clone https://github.com/breatheco-de/exercise-contact-list-context.git
+$ git clone https://github.com/jgustavoj/react-contact-management-application-project.git
 ```
-##### 2. Install the /node_modules
+2. Install the packages:
 ```
 $ npm install
 ```
-##### 3. Run the webpack development server
+3. Create a .env file:
 ```
+$ cp .env.example .env
+```
+4. Start coding! and the webpack dev server with live reload, for windows, mac, linux or Gitpod:
+
+```bash
 $ npm run start
 ```
 
-That is it! Start coding your React Application :)
