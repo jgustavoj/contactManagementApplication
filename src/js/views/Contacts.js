@@ -5,10 +5,12 @@ import { Modal } from "../component/Modal";
 import { Context } from "../store/appContext";
 
 export const Contacts = () => {
-	const [state, setState] = useState({
-		showModal: false
-	});
 	const { store, actions } = useContext(Context);
+	const [state, setState] = useState({
+		showModal: false,
+		id: ""
+	});
+
 	return (
 		<>
 			<div className="container">
@@ -18,23 +20,19 @@ export const Contacts = () => {
 							<button className="customButton">Add new contact</button>
 						</Link>
 					</p>
-					{/* <div id="contacts" className="panel-collapse collapse show" ar-expanded="true"> */}
-					{/* <div id="contacts"> */}
 					<ul className="list-group">
 						<li className="list-group-item">
-							{store.contacts.map(item => {
+							{store.contacts.map((value, index) => {
 								return (
 									<ContactCard
-										key={item.id}
-										id={item.id}
-										onDelete={() => setState({ showModal: true, id: item.id })}
+										contact={value}
+										key={index}
+										onDelete={() => setState({ showModal: true, id: value.id })}
 									/>
 								);
 							})}
 						</li>
 					</ul>
-					{/* </div> */}
-					{/* </div> */}
 				</div>
 				<Modal show={state.showModal} id={state.id} onClose={() => setState({ showModal: false })} />
 			</div>

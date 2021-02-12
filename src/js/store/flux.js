@@ -6,7 +6,7 @@ const getState = ({ getStore, setStore }) => {
 		},
 		actions: {
 			loadContacts: () => {
-				fetch("https://assets.breatheco.de/apis/fake/contact/agenda/Gus-Jimenez")
+				fetch("https://3000-harlequin-mammal-ffmkdi0f.ws-us03.gitpod.io/contact")
 					.then(function(response) {
 						if (!response.ok) {
 							throw Error(response.statusText);
@@ -24,13 +24,12 @@ const getState = ({ getStore, setStore }) => {
 					});
 			},
 
-			addContact: (name, email, phone, address) => {
-				fetch("https://assets.breatheco.de/apis/fake/contact/", {
+			addContact: (full_name, email, phone, address) => {
+				fetch("https://3000-harlequin-mammal-ffmkdi0f.ws-us03.gitpod.io/contact", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({
-						agenda_slug: "Gus-Jimenez",
-						full_name: name,
+						full_name: full_name,
 						email: email,
 						phone: phone,
 						address: address
@@ -38,7 +37,7 @@ const getState = ({ getStore, setStore }) => {
 				})
 					.then(response => response.json())
 					.then(() => {
-						fetch("https://assets.breatheco.de/apis/fake/contact/agenda/Gus-Jimenez")
+						fetch("https://3000-harlequin-mammal-ffmkdi0f.ws-us03.gitpod.io/contact")
 							.then(response => response.json())
 							.then(data => setStore({ contacts: data }));
 						console.log("created");
@@ -46,26 +45,25 @@ const getState = ({ getStore, setStore }) => {
 			},
 
 			deleteContact: id => {
-				fetch(`https://assets.breatheco.de/apis/fake/contact/${id}`, {
+				fetch(`https://3000-harlequin-mammal-ffmkdi0f.ws-us03.gitpod.io/contact/${id}`, {
 					method: "DELETE",
 					headers: { "Content-Type": "application/json" }
 				})
 					.then(response => response.json())
 					.then(() => {
-						fetch("https://assets.breatheco.de/apis/fake/contact/agenda/Gus-Jimenez")
+						fetch("https://3000-harlequin-mammal-ffmkdi0f.ws-us03.gitpod.io/contact")
 							.then(response => response.json())
 							.then(data => setStore({ contacts: data }));
 						console.log("deleted");
 					});
 			},
 
-			editContact: (name, email, phone, address, id) => {
-				fetch("https://assets.breatheco.de/apis/fake/contact/" + id, {
+			editContact: (full_name, email, phone, address, id) => {
+				fetch(`https://3000-harlequin-mammal-ffmkdi0f.ws-us03.gitpod.io/contact/${id}`, {
 					method: "PUT",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({
-						agenda_slug: "Gus-Jimenez",
-						full_name: name,
+						full_name: full_name,
 						email: email,
 						phone: phone,
 						address: address,
@@ -74,7 +72,7 @@ const getState = ({ getStore, setStore }) => {
 				})
 					.then(response => response.json())
 					.then(() => {
-						fetch("https://assets.breatheco.de/apis/fake/contact/agenda/Gus-Jimenez")
+						fetch("https://3000-harlequin-mammal-ffmkdi0f.ws-us03.gitpod.io/contact")
 							.then(response => response.json())
 							.then(data => setStore({ contacts: data }));
 						console.log("Edited");

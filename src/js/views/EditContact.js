@@ -4,17 +4,18 @@ import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
 export const EditContact = props => {
+	const { store, actions } = useContext(Context);
 	const [contact, setContact] = useState({
-		name: props.location.aboutProps.contact.full_name,
-		email: props.location.aboutProps.contact.email,
-		phone: props.location.aboutProps.contact.phone,
-		address: props.location.aboutProps.contact.address,
-		id: props.location.aboutProps.contact.id
+		full_name: props.location.state.full_name,
+		email: props.location.state.email,
+		phone: props.location.state.phone,
+		address: props.location.state.address,
+		id: props.location.state.id
 	});
 
-	const { store, actions } = useContext(Context);
-
-	//inputs are controlled elements because inputs fields are going to show whats in the corresponding variable in the state
+	let handleChange = e => {
+		setContact({ ...contact, [e.target.name]: e.target.value });
+	};
 
 	return (
 		<div className="container">
@@ -26,17 +27,19 @@ export const EditContact = props => {
 					<div className="form-group">
 						<label>Full Name</label>
 						<input
-							onChange={e => setContact({ ...contact, name: e.target.value })}
+							name="full_name"
+							onChange={handleChange}
 							type="text"
 							className="form-control"
 							placeholder="Full Name"
-							value={contact.name}
+							value={contact.full_name}
 						/>
 					</div>
 					<div className="form-group">
 						<label>Email</label>
 						<input
-							onChange={e => setContact({ ...contact, email: e.target.value })}
+							name="email"
+							onChange={handleChange}
 							type="email"
 							className="form-control"
 							placeholder="Enter email"
@@ -46,7 +49,8 @@ export const EditContact = props => {
 					<div className="form-group">
 						<label>Phone</label>
 						<input
-							onChange={e => setContact({ ...contact, phone: e.target.value })}
+							name="phone"
+							onChange={handleChange}
 							type="phone"
 							className="form-control"
 							placeholder="Enter phone"
@@ -56,7 +60,8 @@ export const EditContact = props => {
 					<div className="form-group">
 						<label>Address</label>
 						<input
-							onChange={e => setContact({ ...contact, address: e.target.value })}
+							name="address"
+							onChange={handleChange}
 							type="text"
 							className="form-control"
 							placeholder="Enter address"
@@ -67,7 +72,7 @@ export const EditContact = props => {
 						<button
 							onClick={() =>
 								actions.editContact(
-									contact.name,
+									contact.full_name,
 									contact.email,
 									contact.phone,
 									contact.address,
@@ -76,7 +81,6 @@ export const EditContact = props => {
 							}
 							type="button"
 							className="customButtonSave">
-							{" "}
 							save
 						</button>
 					</Link>

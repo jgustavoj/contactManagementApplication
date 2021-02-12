@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 export const AddContact = () => {
 	const { store, actions } = useContext(Context);
 	const [contact, setContact] = useState({
-		name: null,
+		full_name: null,
 		email: null,
 		phone: null,
 		address: null
@@ -13,10 +13,6 @@ export const AddContact = () => {
 
 	const handleChange = e => {
 		setContact({ ...contact, [e.target.name]: e.target.value });
-	};
-
-	const handleSave = () => {
-		actions.addContact(contact.name, contact.email, contact.phone, contact.address);
 	};
 
 	return (
@@ -30,10 +26,11 @@ export const AddContact = () => {
 						<label>Full Name</label>
 						<input
 							onChange={handleChange}
-							name="name"
+							name="full_name"
 							type="text"
 							className="form-control"
 							placeholder="Full Name"
+							value={contact.full_name}
 						/>
 					</div>
 					<div className="form-group">
@@ -44,6 +41,7 @@ export const AddContact = () => {
 							name="email"
 							className="form-control"
 							placeholder="Enter email"
+							value={contact.email}
 						/>
 					</div>
 					<div className="form-group">
@@ -54,6 +52,7 @@ export const AddContact = () => {
 							name="phone"
 							className="form-control"
 							placeholder="Enter phone"
+							value={contact.phone}
 						/>
 					</div>
 					<div className="form-group">
@@ -64,12 +63,14 @@ export const AddContact = () => {
 							name="address"
 							className="form-control"
 							placeholder="Enter address"
+							value={contact.address}
 						/>
 					</div>
 					<Link to="/" className="d-flex justify-content-center">
 						<button
-							disabled={!contact.name || !contact.address || !contact.phone || !contact.email}
-							onClick={handleSave}
+							onClick={() =>
+								actions.addContact(contact.full_name, contact.email, contact.phone, contact.address)
+							}
 							type="button"
 							className="customButtonSave">
 							save
