@@ -3,7 +3,7 @@
 <p align="center">
 <img src="https://github.com/jgustavoj/portfolio-v1/blob/master/images/project-2/contact-management.png" />
 </p>
-<p> This is a full-Stack Interactive Application that allows you to utilize CRUD for all contacts in the database. It uses context as a global state to efficiently share component values throughout the application.</p>
+<p> This is a full-Stack Interactive Application that allows you to utilize CRUD (Create, Read, Update and Delete) for all contacts in the database. It uses context as a global state to efficiently share component values throughout the application.</p>
 
 
  **Live Source Coming Soon** :raised_hands:
