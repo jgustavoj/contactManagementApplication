@@ -1,4 +1,4 @@
-# The Schedule Guy
+# Contact Management Application 
 
 <p align="center">
 <img src="https://github.com/jgustavoj/portfolio-v1/blob/master/images/project-2/contact-management.png" />
